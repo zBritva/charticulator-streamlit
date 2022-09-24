@@ -34,7 +34,7 @@ jobs:
           target: ./src/charticulator/frontend/charticulator/config.yml
 
       - name: Build charticulator
-        run: yarn build
+        run: yarn --cwd "./src/charticulator/frontend/charticulator" build
 
       - name: Set up Python
         uses: actions/setup-python@v2
