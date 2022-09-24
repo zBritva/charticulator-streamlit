@@ -1,0 +1,3 @@
+recursive-include src/charticulator/frontend *
+include README.md
+include LICENSE

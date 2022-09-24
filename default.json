@@ -1,0 +1,164 @@
+{
+  "_id": "wamrw2t08fb",
+  "classID": "chart.rectangle",
+  "properties": {
+    "name": "Chart",
+    "backgroundColor": {
+      "r": 100,
+      "g": 100,
+      "b": 100
+    },
+    "backgroundOpacity": 1,
+    "enableContextMenu": true,
+    "exposed": true
+  },
+  "mappings": {
+    "marginTop": {
+      "type": "value",
+      "value": 80
+    },
+    "width": {
+      "type": "value",
+      "value": 900
+    },
+    "height": {
+      "type": "value",
+      "value": 600
+    }
+  },
+  "glyphs": [
+    {
+      "_id": "u3gz37blwsf",
+      "classID": "glyph.rectangle",
+      "properties": {
+        "name": "Glyph"
+      },
+      "table": "Temperature",
+      "marks": [
+        {
+          "_id": "0fzzujthp36n",
+          "classID": "mark.anchor",
+          "properties": {
+            "name": "Anchor"
+          },
+          "mappings": {
+            "x": {
+              "type": "parent",
+              "parentAttribute": "icx"
+            },
+            "y": {
+              "type": "parent",
+              "parentAttribute": "icy"
+            }
+          }
+        }
+      ],
+      "mappings": {},
+      "constraints": []
+    }
+  ],
+  "elements": [
+    {
+      "_id": "bgaoly372bi",
+      "classID": "plot-segment.cartesian",
+      "glyph": "u3gz37blwsf",
+      "table": "Temperature",
+      "filter": null,
+      "mappings": {
+        "x1": {
+          "type": "parent",
+          "parentAttribute": "x1"
+        },
+        "y1": {
+          "type": "parent",
+          "parentAttribute": "y1"
+        },
+        "x2": {
+          "type": "parent",
+          "parentAttribute": "x2"
+        },
+        "y2": {
+          "type": "parent",
+          "parentAttribute": "y2"
+        }
+      },
+      "properties": {
+        "name": "PlotSegment1",
+        "visible": true,
+        "marginX1": 0,
+        "marginY1": 0,
+        "marginX2": 0,
+        "marginY2": 0,
+        "sublayout": {
+          "type": "dodge-x",
+          "order": null,
+          "ratioX": 0.1,
+          "ratioY": 0.1,
+          "align": {
+            "x": "start",
+            "y": "start"
+          },
+          "grid": {
+            "direction": "x",
+            "xCount": null,
+            "yCount": null,
+            "gridStartPosition": "LT"
+          },
+          "packing": {
+            "gravityX": 0.1,
+            "gravityY": 0.1
+          },
+          "jitter": {
+            "vertical": true,
+            "horizontal": true
+          }
+        }
+      }
+    },
+    {
+      "_id": "egkfw542uz5",
+      "classID": "mark.text",
+      "properties": {
+        "name": "Title",
+        "visible": true,
+        "alignment": {
+          "x": "middle",
+          "y": "top",
+          "xMargin": 0,
+          "yMargin": 30
+        },
+        "rotation": 0
+      },
+      "mappings": {
+        "x": {
+          "type": "parent",
+          "parentAttribute": "cx"
+        },
+        "y": {
+          "type": "parent",
+          "parentAttribute": "oy2"
+        },
+        "text": {
+          "type": "value",
+          "value": "demo"
+        },
+        "fontSize": {
+          "type": "value",
+          "value": 24
+        },
+        "color": {
+          "type": "value",
+          "value": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        }
+      }
+    }
+  ],
+  "scales": [],
+  "scaleMappings": [],
+  "constraints": [],
+  "resources": []
+}

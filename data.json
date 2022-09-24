@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Temperature",
+    "displayName": "Temperature",
+    "columns": [
+      {
+        "name": "Month",
+        "displayName": "Month",
+        "type": "string",
+        "metadata": {
+          "kind": "categorical",
+          "order": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ]
+        }
+      },
+      {
+        "name": "City",
+        "displayName": "City",
+        "type": "string",
+        "metadata": {
+          "kind": "categorical"
+        }
+      },
+      {
+        "name": "Value",
+        "displayName": "Value",
+        "type": "number",
+        "metadata": {
+          "kind": "numerical",
+          "format": ".1f"
+        }
+      }
+    ],
+    "rows": [
+      {
+        "_id": "ID0",
+        "Month": "Jan",
+        "City": "City1",
+        "Value": 53.9
+      },
+      {
+        "_id": "ID1",
+        "Month": "Jan",
+        "City": "City2",
+        "Value": 79.7
+      },
+      {
+        "_id": "ID2",
+        "Month": "Jan",
+        "City": "City3",
+        "Value": 46.1
+      },
+      {
+        "_id": "ID3",
+        "Month": "Feb",
+        "City": "City1",
+        "Value": 61.5
+      },
+      {
+        "_id": "ID4",
+        "Month": "Feb",
+        "City": "City2",
+        "Value": 77.7
+      },
+      {
+        "_id": "ID5",
+        "Month": "Feb",
+        "City": "City3",
+        "Value": 38.5
+      },
+      {
+        "_id": "ID6",
+        "Month": "Mar",
+        "City": "City1",
+        "Value": 68.3
+      },
+      {
+        "_id": "ID7",
+        "Month": "Mar",
+        "City": "City2",
+        "Value": 73.8
+      },
+      {
+        "_id": "ID8",
+        "Month": "Mar",
+        "City": "City3",
+        "Value": 31.7
+      }
+    ],
+    "type": "Main"
+  }
+]
