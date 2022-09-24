@@ -1,3 +1,4 @@
 [submodule "src/charticulator/frontend/charticulator"]
 	path = src/charticulator/frontend/charticulator
 	url = https://github.com/zBritva/charticulator
+	branch = beta

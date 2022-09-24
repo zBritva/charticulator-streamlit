@@ -13,15 +13,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
+      
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Install packages
+        run: yarn install --ignore-engines --modules-folder ./src/charticulator/frontend/charticulator
+      
+      - name: Copy config.yml
+        uses: canastro/copy-action@0.0.2
+        with:
+          source: config.yml
+          target: ./src/charticulator/frontend/charticulator/config.yml
+
+      - name: Build charticulator
+        run: yarn build
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
+      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
+      
       - name: Build and publish
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
