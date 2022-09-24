@@ -1,4 +1,7 @@
-recursive-include src/charticulator/frontend *
+include src/charticulator/frontend/index.html
+include src/charticulator/frontend/main.js
+include src/charticulator/frontend/streamlit-component-lib.js
+include src/charticulator/frontend/style.css
 recursive-include src/charticulator/frontend/charticulator/dist *
 include README.md
 include LICENSE
