@@ -35,6 +35,8 @@ jobs:
           target: ./src/charticulator/frontend/charticulator/config.yml
 
       - name: Build charticulator
+        env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
         working-directory: ./src/charticulator/frontend/charticulator
         run: yarn build
 
