@@ -25,7 +25,8 @@ jobs:
           node-version: 14
 
       - name: Install packages
-        run: yarn install --ignore-engines --modules-folder ./src/charticulator/frontend/charticulator
+        working-directory: ./src/charticulator/frontend/charticulator
+        run: yarn install --ignore-engines
       
       - name: Copy config.yml
         uses: canastro/copy-action@0.0.2
@@ -34,7 +35,8 @@ jobs:
           target: ./src/charticulator/frontend/charticulator/config.yml
 
       - name: Build charticulator
-        run: yarn --cwd "./src/charticulator/frontend/charticulator" build
+        working-directory: ./src/charticulator/frontend/charticulator
+        run: yarn build
 
       - name: Set up Python
         uses: actions/setup-python@v2
