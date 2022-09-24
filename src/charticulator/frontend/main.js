@@ -17,7 +17,7 @@ function onRender(event) {
   if (!window.rendered) {
     // You most likely want to get the data passed in like this
     // const {input1, input2, input3} = event.detail.args
-    fetch(`${window.CHARTICULATOR_CONFIG.WorkerURL}`).then(
+    fetch(`${CHARTICULATOR_CONFIG.WorkerURL}`).then(
       (responce) => {
         if (!responce.ok) {
           throw Error(

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>charticulator</title>
     <script src="./streamlit-component-lib.js"></script>
+    <script src="./config.js"></script>
+    <script src="./charticulator/dist/scripts/worker.bundle.js"></script>
+    <script src="./charticulator/dist/scripts/container.bundle.js"></script>
     <script src="./main.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./charticulator/dist/styles/app.css?sha256=7387ea51e0e73d931774d80b292355909570b95b78fed3b161d664784b927760" integrity="sha256-c4fqUeDnPZMXdNgLKSNVkJVwuVt4/tOxYdZkeEuSd2A=" type="text/css" />
@@ -19,8 +22,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="./charticulator/dist/data/config.js"></script>
-    <script src="./charticulator/dist/scripts/container.bundle.js"></script>
     <script type="text/javascript">
       // Include Lato and Inconsolata from Google fonts.
       WebFontConfig = {

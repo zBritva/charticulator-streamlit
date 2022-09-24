@@ -210,9 +210,9 @@ def main():
         populationTableDataset,
         # Mapping dataset columns to template columns
         {
-            "Country": "Country_",
-            "Population": "Population_",
-            "Geographic Location": "Geographic Location_"
+            "Country": "Country",
+            "Population": "Population",
+            "Geographic Location": "Geographic Location"
         },
         # Even types switcher
         {
