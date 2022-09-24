@@ -6,8 +6,8 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
-    name="charticulator",
-    version="0.0.2",
+    name="streamlit-charticulator",
+    version="0.0.1",
     author="Ilfat Galiev",
     author_email="zbritva@gmail.com",
     description="Component to render charticulator templates with streamlit data",
