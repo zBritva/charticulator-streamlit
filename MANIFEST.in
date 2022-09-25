@@ -1,4 +1,5 @@
 include src/charticulator/frontend/index.html
+include src/charticulator/frontend/config.js
 include src/charticulator/frontend/main.js
 include src/charticulator/frontend/streamlit-component-lib.js
 include src/charticulator/frontend/style.css
