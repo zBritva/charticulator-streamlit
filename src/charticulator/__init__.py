@@ -238,7 +238,7 @@ def main():
     st.write(chart)
 
     st.write("Event related data")
-    if chart and chart['rowIndices']:
+    if chart and chart.get('rowIndices'):
         for index, rowIndex in enumerate(chart['rowIndices']):
             st.write(rowsList[rowIndex])
 

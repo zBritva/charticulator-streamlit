@@ -35,24 +35,80 @@ function onRender(event) {
 
             const chartJSON = JSON.parse(template);
 
+            const chartTables = chartJSON.tables;
+
             const chartTemplate = new CharticulatorContainer.ChartTemplate(
               chartJSON
             );
 
-            // default assign
-            tables.forEach(table => {
-              chartTemplate.assignTable(
-                table.name,
-                table.name
-              );
-              table.columns.forEach(column => {
-                chartTemplate.assignColumn(
+            let error = "";
+            // check tables
+            if (chartTables) {
+              chartTables.forEach(chartTable => {
+                const dataTable = tables.find(t => t.type === chartTable.type);
+                if (dataTable) {
+                  chartTable.columns.forEach(chartColumn => {
+                    const dataColumn = dataTable.columns.find(c => c.name === chartColumn.name);
+                    if (!dataColumn) {
+                      if (mapping[chartColumn.name] && dataTable.columns.find(c => c.name === mapping[chartColumn.name])) {
+                        chartTemplate.assignColumn(
+                          chartTable.name,
+                          chartColumn.name,
+                          mapping[chartColumn.name]
+                        );
+                      } else {
+                        error = `Chart requres '${chartColumn.name}' column in '${chartTable.name}' table`;
+                      }
+                    } else {
+                      chartTemplate.assignColumn(
+                        chartTable.name,
+                        chartColumn.name,
+                        dataColumn.name
+                      );
+                    }
+                  });
+                  chartTemplate.assignTable(
+                    chartTable.name,
+                    dataTable.name
+                  );
+                } else {
+                  if (mapping[chartTable.name] && tables.find(t => t.name === mapping[chartTable.name])) {
+                    chartTemplate.assignTable(
+                      chartTable.name,
+                      mapping[chartTable.name]
+                    );
+                  } else {
+                    error = `Chart requres table ${chartTable.name}`;
+                  }
+                }
+              });
+            }
+
+            if (error) {
+              const root = document.getElementById('root');
+              root.textContent = error;
+              sendValue({event: "error", error});
+              window.rendered = true;
+              return;
+            }
+
+            // if no mapping columns we assume columns match with template columns
+            if (!mapping) {
+              // default assign
+              tables.forEach(table => {
+                chartTemplate.assignTable(
                   table.name,
-                  column.name,
-                  column.name
+                  table.name
                 );
-              })
-            });
+                table.columns.forEach(column => {
+                  chartTemplate.assignColumn(
+                    table.name,
+                    column.name,
+                    column.name
+                  );
+                })
+              });
+            }
 
             const dataset = {
               name: "default",
