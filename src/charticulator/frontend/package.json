@@ -1,0 +1,14 @@
+{
+  "name": "charticulator-streamlit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ilfat Galiev",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
