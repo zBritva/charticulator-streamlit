@@ -39,7 +39,7 @@ async function onRender(event) {
         if (chartTable.type == null && index == 1) {
           chartTable.type = "links";
         }
-        const dataTable = tables.find(t => t.type === chartTable.type);
+        const dataTable = tables.find(t => t.type.toLowerCase() === chartTable.type.toLowerCase());
         if (dataTable) {
           chartTable.columns.forEach(chartColumn => {
             const dataColumn = dataTable.columns.find(c => c.name === chartColumn.name);
