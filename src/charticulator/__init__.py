@@ -176,7 +176,7 @@ def main():
         "displayName": "Population",
         "columns": columnsList,
         "rows": rowsList,
-        "type": "Main" # main table
+        "type": "main" # main table
     }]
 
     st.write('Initialize component with template and data')

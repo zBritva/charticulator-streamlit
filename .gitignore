@@ -107,3 +107,6 @@ cookiecutter-pypackage-env/
 
 # streamlit
 .streamlit/secrets.toml
+
+# frontend
+src/charticulator/frontend/node_modules

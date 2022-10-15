@@ -32,7 +32,13 @@ async function onRender(event) {
     let error = "";
     // check tables
     if (chartTables) {
-      chartTables.forEach(chartTable => {
+      chartTables.forEach((chartTable, index) => {
+        if (chartTable.type == null && index == 0) {
+          chartTable.type = "main";
+        }
+        if (chartTable.type == null && index == 1) {
+          chartTable.type = "links";
+        }
         const dataTable = tables.find(t => t.type === chartTable.type);
         if (dataTable) {
           chartTable.columns.forEach(chartColumn => {
@@ -60,7 +66,7 @@ async function onRender(event) {
             dataTable.name
           );
         } else {
-          if (mapping[chartTable.name] && tables.find(t => t.name === mapping[chartTable.name])) {
+          if (mapping && mapping[chartTable.name] && tables.find(t => t.name === mapping[chartTable.name])) {
             chartTemplate.assignTable(
               chartTable.name,
               mapping[chartTable.name]
