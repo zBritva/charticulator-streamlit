@@ -1,26 +1,3 @@
-# charticulator
-
-Component to render charticulator templates with streamlit
-
-## Demo application
-
-https://charticulator.streamlitapp.com/
-
-## Installation instructions 
-
-```sh
-pip install charticulator
-```
-
-## Download or create template
-
-You can [create own template](https://charticulator.com/app/index.html) or [download samples](https://charticulator.com/templates.html) in official websie of charticulator.
-
-Or download [the template used in this sample](https://github.com/zBritva/charticulator-streamlit/blob/master/streamlit_sample.tmplt)
-
-## Usage instructions
-
-```python
 import streamlit as st
 import pandas as pd
 
@@ -88,4 +65,3 @@ chart = charticulator(
 )
 
 st.write(chart)
-```
