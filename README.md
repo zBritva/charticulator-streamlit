@@ -2,6 +2,8 @@
 
 Component to render charticulator templates with streamlit
 
+![charticulator-streamlit-gallery](https://user-images.githubusercontent.com/10897951/207360557-f19b995d-556a-4073-9b0e-967e940a6b64.gif)
+
 ## Demo application
 
 https://charticulator.streamlitapp.com/
